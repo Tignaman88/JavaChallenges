@@ -17,5 +17,9 @@ public class Main {
 //      System.out.println(calculator.getSubtractionResult());
 //      System.out.println(calculator.getMultiplicationResult());
 //      System.out.println(calculator.getDivisionResult());
+
+//        Person Alessio = new Person();
+//        Alessio.setAge(190);
+//        System.out.println(Alessio.getAge());
     }
 }
