@@ -21,5 +21,6 @@ public class Main {
 //        Person Alessio = new Person();
 //        Alessio.setAge(190);
 //        System.out.println(Alessio.getAge());
+        RemoveEmptySpace.Test();
     }
 }
