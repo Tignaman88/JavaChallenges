@@ -26,7 +26,8 @@ public class Main {
 //        Alessio.setAge(190);
 //        System.out.println(Alessio.getAge());
 //        RemoveEmptySpace.Test();
-        System.out.println(QuarterOfTheYear.quarterOf(4));
+//        System.out.println(QuarterOfTheYear.quarterOf(4));
+        System.out.println(WillYouMakeIt.zeroFuel(45, 25, 2));
 
     }
 }
