@@ -1,6 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-//        BankAccount AlessioScarpello = new BankAccount();
+//          BankAccount AlessioScarpello = new BankAccount("12345", 5.00, "Alessio Scarpello",
+//                  "alessio@yahoo.it", "05557830923");
+        BankAccount AlessioScarpello = new BankAccount();
+        System.out.println(AlessioScarpello.getAccountNumber());
+        System.out.println(AlessioScarpello.getAccountBalance());
 //        AlessioScarpello.setAccountBalance(5.45);
 //        AlessioScarpello.setCustomerName("Alessio Scarpello");
 //        AlessioScarpello.depositing(1000);
@@ -21,6 +25,7 @@ public class Main {
 //        Person Alessio = new Person();
 //        Alessio.setAge(190);
 //        System.out.println(Alessio.getAge());
-        RemoveEmptySpace.Test();
+//        RemoveEmptySpace.Test();
+
     }
 }
