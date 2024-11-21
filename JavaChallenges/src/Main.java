@@ -1,40 +1,33 @@
 public class Main {
     public static void main(String[] args) {
-        AllAboutStrings.printInformation("Hello World");
-        AllAboutStrings.printInformation("");
-        AllAboutStrings.printInformation("\t    \n");
+        String helloWorld = "Hello" + " World";
+        helloWorld.concat(" and Goodbye");
 
-        String helloWorld = "Hello World";
-        System.out.printf("index of r = %d %n", helloWorld.indexOf('r'));
-        System.out.printf("index of World = %d %n", helloWorld.indexOf("World"));
-        System.out.printf("index of l = %d %n", helloWorld.indexOf('l'));
-        System.out.printf("index of l = %d %n", helloWorld.lastIndexOf('l'));
-        System.out.printf("index of l = %d %n", helloWorld.lastIndexOf('l', 3));
-        System.out.printf("index of l = %d %n", helloWorld.lastIndexOf('l', 8));
+        StringBuilder helloWorldBuilder = new StringBuilder("Hello" + " World");
+        helloWorldBuilder.append(" and Goodbye");
 
-        String helloWorldLower = helloWorld.toLowerCase();
-        if(helloWorld.equals(helloWorldLower)) {
-            System.out.println("Values match exactly");
-        }
+        StringOptions.printInformation(helloWorld);
+        StringOptions.printInformation(helloWorldBuilder);
 
-        if(helloWorld.equalsIgnoreCase(helloWorldLower)) {
-            System.out.println("Values match ignoring case");
-        }
+        StringBuilder emptyStart = new StringBuilder();
+        emptyStart.append("a".repeat(57));
 
-        if(helloWorld.startsWith("Hello")) {
-            System.out.println("String starts with Hello");
-        }
+        StringBuilder emptyStart32 = new StringBuilder(32);
+        emptyStart32.append("a".repeat(17));
 
-        if(helloWorld.endsWith("World")) {
-            System.out.println("String ends with World");
-        }
+        StringOptions.printInformation(emptyStart);
+        StringOptions.printInformation(emptyStart32);
 
-        if(helloWorld.contains("World")) {
-            System.out.println("String contains World");
-        }
+        StringBuilder builderPlus = new StringBuilder("Hello" + " World");
+        builderPlus.append(" and Goodbye");
 
-        if(helloWorld.contentEquals("Hello World")) {
-            System.out.println("Values match exactly");
-        }
+        builderPlus.deleteCharAt(16).insert(16, 'g');
+        System.out.println(builderPlus);
+
+        builderPlus.replace(16, 17, "G");
+        System.out.println(builderPlus);
+
+        builderPlus.reverse().setLength(7);
+        System.out.println(builderPlus);
     }
 }
