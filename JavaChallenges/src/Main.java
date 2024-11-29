@@ -1,15 +1,25 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        Printer printer = new Printer(50, false);
-        System.out.println("Initial page count = " + printer.getPagesPrinted());
+//        Movie theMovie = Movie.getMovie("Adventure", "Star Wars");
+//        Movie theMovie = Movie.getMovie("Science", "Star Wars");
+//        theMovie.watchMovie();
 
-        int pagesPrinted = printer.printPages(5);
-        System.out.printf("Current Job Pages: %d, Printer Total: %d %n",
-                pagesPrinted, printer.getPagesPrinted());
+        Scanner s = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter Type (A for Adventure, C for Comedy, " +
+                    "S for Science Fiction, or Q to quit): ");
+            String type = s.nextLine();
+            if ("Qq".contains(type)) {
+                break;
+            }
+            System.out.print("Enter Movie Title: ");
+            String title = s.nextLine();
+            Movie movie = Movie.getMovie(type, title);
+            movie.watchMovie();
+        }
 
-        pagesPrinted = printer.printPages(10);
-        System.out.printf("Current Job Pages: %d, Printer Total: %d %n",
-                pagesPrinted, printer.getPagesPrinted());
     }
 }
