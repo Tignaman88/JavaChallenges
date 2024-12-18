@@ -1,15 +1,15 @@
 public class BurgerFactory {
 
-    public static Burger getBurger(String burgerType) {
+    public static Burger getBurger(BurgerTypes burgerType) {
 
 
         switch (burgerType) {
 
-            case "Cheeseburger":
+            case BurgerTypes.CheeseBurger:
                 return new Cheeseburger();
-            case "Double Cheeseburger":
+            case BurgerTypes.DoubleCheeseburger:
                 return new DoubleCheeseburger();
-            case "Bacon Cheeseburger":
+            case BurgerTypes.BaconCheeseburger:
                 return new BaconCheeseburger();
             default:
                 return null;

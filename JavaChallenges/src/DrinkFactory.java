@@ -1,13 +1,13 @@
 public class DrinkFactory {
 
-    public static Drink getDrink(String drinkType, String drinkSize) {
+    public static Drink getDrink(DrinkType drinkType, String drinkSize) {
 
 
         switch (drinkType) {
 
-            case "Fanta":
+            case DrinkType.Fanta:
                 return new Fanta(drinkSize);
-            case "Coke":
+            case DrinkType.Coke:
                 return new Coke(drinkSize);
             default:
                 return null;

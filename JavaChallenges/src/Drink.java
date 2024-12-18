@@ -1,6 +1,6 @@
 public class Drink {
 
-    protected String drinkType;
+    protected DrinkType drinkType;
     protected String drinkSize;
     protected double drinkPrice;
     protected double drinkPriceSmall;
@@ -14,7 +14,7 @@ public class Drink {
         return drinkPrice;
     }
 
-    public String getDrinkType() {
+    public DrinkType getDrinkType() {
         return drinkType;
     }
 
@@ -32,4 +32,5 @@ public class Drink {
 //            default -> drinkPrice = drinkPriceRegular;
         }
     }
+
 }

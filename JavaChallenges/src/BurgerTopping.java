@@ -1,9 +1,11 @@
 public class BurgerTopping {
 
-    protected String toppingType;
+    protected BurgerToppingType burgerToppingType;
     protected double toppingCost;
 
-
+    public BurgerToppingType getBurgerToppingType() {
+        return burgerToppingType;
+    }
 
     public double getToppingCost() {
         return toppingCost;

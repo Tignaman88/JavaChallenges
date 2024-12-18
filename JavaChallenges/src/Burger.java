@@ -2,19 +2,27 @@ import java.util.ArrayList;
 
 public class Burger {
 
-    protected String burgerType;
+    protected BurgerTypes burgerType;
     protected double burgerPrice;
     protected ArrayList<BurgerTopping> burgerToppings = new ArrayList<BurgerTopping>();
     protected int burgerToppingAmount = 3;
     protected int burgerToppingCounter = 0;
 
-    public void addTopping(String toppingName) {
+    public BurgerTypes getBurgerType() {
+        return burgerType;
+    }
+
+    public double getBurgerPrice() {
+        return burgerPrice;
+    }
+
+    public void addTopping(BurgerToppingType toppingName) {
 
         if (burgerToppingCounter > burgerToppingAmount) return;
         burgerToppingCounter++;
         BurgerTopping chosenTopping = BurgerToppingFactory.getBurgerTopping(toppingName);
         burgerToppings.add(chosenTopping);
-        burgerPrice += chosenTopping.toppingCost;
+        burgerPrice += chosenTopping.getToppingCost();
 
     }
 

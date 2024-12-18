@@ -1,7 +1,11 @@
 public class BurgerTopping_Gherkin extends BurgerTopping {
 
-    protected String toppingType = "Gherkin";
+    protected BurgerToppingType toppingType = BurgerToppingType.Gherkin;
     protected double toppingCost = 1.0;
+
+    public BurgerToppingType getToppingType() {
+        return toppingType;
+    }
 
     @Override
     public double getToppingCost() {
