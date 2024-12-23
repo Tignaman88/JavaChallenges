@@ -1,13 +1,20 @@
+import CodeWars.*;
+import CodeWars.Circle;
+import CodeWars.Rectangle;
+
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        MealOrder order = MealOrderFactory.createMealOrder(BurgerTypes.CheeseBurger, DrinkType.Fanta, "Regular", "Chips");
+        List<Shape> shapes = List.of(new Circle(2), new Rectangle(3,3), new Square(2));
+        double totalArea = ShapeUtilities.sumAllAreas(shapes); // 25.567
 
-        order.getBurger().addTopping(BurgerToppingType.Bacon);
+        List<Circle> circles = List.of(new Circle(2), new Circle(1), new Circle(5));
+        double circleArea = ShapeUtilities.sumAllAreas(circles); // compilation error !
 
-       System.out.println(order.burger.getBurgerPrice());
-        order.mealSummary();
+        List<Square> squares = List.of(new Square(5), new Square(3), new Square(7));
+        double squareArea = ShapeUtilities.sumAllAreas(squares);
     }
 }
