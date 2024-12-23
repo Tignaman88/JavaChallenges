@@ -13,4 +13,8 @@ public class BaconCheeseburger extends Burger {
     public BurgerTypes getBurgerType() {
         return burgerType;
     }
+
+    public void setBurgerPrice(double price){
+        this.burgerPrice = price;
+    }
 }

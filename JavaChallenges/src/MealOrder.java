@@ -13,6 +13,18 @@ public class MealOrder {
         System.out.println("The total price is £" + getMealCost());
     }
 
+    public Burger getBurger() {
+        return burger;
+    }
+
+    public Drink getDrink() {
+        return drink;
+    }
+
+    public SideItem getSideItem() {
+        return sideItem;
+    }
+
     public double getMealCost() {
 
         double mealCost = burger.getBurgerPrice() + drink.getDrinkPrice() + sideItem.getSideItemPrice();

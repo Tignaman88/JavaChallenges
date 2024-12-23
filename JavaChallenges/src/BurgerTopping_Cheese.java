@@ -1,9 +1,9 @@
 public class BurgerTopping_Cheese extends BurgerTopping {
 
-    protected BurgerToppingType toppingType = BurgerToppingType.Cheese;
+    protected String toppingType = "Cheese";
     protected double toppingCost = 2.0;
 
-    public BurgerToppingType getToppingType() {
+    public String getToppingType() {
         return toppingType;
     }
 

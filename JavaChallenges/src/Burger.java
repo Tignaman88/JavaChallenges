@@ -16,13 +16,19 @@ public class Burger {
         return burgerPrice;
     }
 
-    public void addTopping(BurgerToppingType toppingName) {
+    public void setBurgerPrice(double burgerPrice) {
+        this.burgerPrice = burgerPrice;
+    }
 
+    public void addTopping(BurgerToppingType toppingName) {
+        System.out.println("TEST?");
         if (burgerToppingCounter > burgerToppingAmount) return;
         burgerToppingCounter++;
         BurgerTopping chosenTopping = BurgerToppingFactory.getBurgerTopping(toppingName);
-        burgerToppings.add(chosenTopping);
-        burgerPrice += chosenTopping.getToppingCost();
+        if (chosenTopping != null) {
+            burgerToppings.add(chosenTopping);
+            setBurgerPrice(getBurgerPrice() + chosenTopping.getToppingCost());
+        }
 
     }
 
