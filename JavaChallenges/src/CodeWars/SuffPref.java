@@ -1,39 +1,63 @@
 package CodeWars;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SuffPref {
 
     public static int solve(String s) {
 
+        //validation
+        if (s.length() == 1) return 0;
 
-        char[] dividedString = s.toCharArray();
-        String suffix = "";
-        String prefix = "";
-
-        int reverseArrayStartingPoint = s.length() - 1;
-
-        for (int i = 0; i <= s.length() - 1; i++) {
-
-            prefix += dividedString[i];
-            suffix += dividedString[reverseArrayStartingPoint];
-            reverseArrayStartingPoint--;
+        //split the strings into parts
+        int maxLengthSuffixOrPrefix = s.length() / 2;
+        String[] parts;
+        if (s.length() % 2 == 0) {
+            parts = new String[]{s.substring(0, maxLengthSuffixOrPrefix), s.substring(maxLengthSuffixOrPrefix)};
+        } else {
+            parts = new String[]{s.substring(0, maxLengthSuffixOrPrefix), s.substring(maxLengthSuffixOrPrefix + 1)};
         }
 
 
 
-        //reverse the suffix
 
-        String reversedSuffix = "";
-        for (int j = suffix.length() - 1; j >= 0; j--) {
+        //Assign the parts
+        String prefix = parts[0];
+        String suffix = parts[1];
 
-            reversedSuffix += suffix.charAt(j);
+
+        //creates the lists we need
+        ArrayList<Character> prefixList = new ArrayList<>();
+        ArrayList<Character> suffixList = new ArrayList<>();
+
+        //separate the chars to the lists
+        char[] separatedPrefix = prefix.toCharArray();
+        char[] separatedSuffix = suffix.toCharArray();
+
+        //assigns the chars to the lists
+        for (char letter : separatedPrefix) {
+            prefixList.add(letter);
         }
 
-        if (prefix.contentEquals(reversedSuffix)) {
-
-            return reversedSuffix.length();
+        for (char letter : separatedSuffix) {
+            suffixList.add(letter);
         }
-        return reversedSuffix.length();
+
+        //to iterate through words
+        int j = 0;
+        for (int i = prefixList.size() - 1; i >= 0; i--) {
+            if (prefixList.toString().contentEquals(suffixList.toString())) {
+                return prefixList.size();
+            } else {
+                prefixList.remove(i);
+                suffixList.remove(j);
+            }
+
+        }
+
+        return 0;
     }
-}
+    }
+
+
