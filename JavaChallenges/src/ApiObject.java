@@ -1,14 +1,8 @@
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.*;
 import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.Locale;
 import java.util.Scanner;
-import java.net.http.*;
-import java.net.http.HttpResponse.*;
-import java.net.http.HttpRequest.*;
+
 import com.google.gson.*;
 
 
@@ -53,7 +47,6 @@ public class ApiObject {
             url = new URL(url_str);
             request = (HttpURLConnection) url.openConnection();
             request.setRequestMethod("GET");
-            System.out.println(request.getResponseCode());
             request.connect();
         } catch (Exception e ) {
             e.printStackTrace();
@@ -137,7 +130,7 @@ public class ApiObject {
         return amountToExchange;
     }
 
-    public String getJSonObjectForComparisonWithUserInput() throws IOException {
+    public void getJSonObjectForComparisonWithUserInput() throws IOException {
         // Create object to see if input user is contained in JSon file
         stringToCompareWithInputUserBuilder = new StringBuilder();
         String url_str_to_compare = "https://v6.exchangerate-api.com/v6/5879392cbdbcaf6d4b7ab05e/latest/USD";
@@ -156,7 +149,6 @@ public class ApiObject {
             throw new RuntimeException(e);
         }
         stringToCompareWithInputUser = stringToCompareWithInputUserBuilder.toString();
-        return stringToCompareWithInputUser;
     }
 
 
